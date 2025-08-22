@@ -5,790 +5,177 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ecocide Quiz Update</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<style>
-  .qbutton {
-    margin: 0.3rem 0.5rem 0.3rem 0;
-    font-size: 1.1rem;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  .qbutton:disabled {
-    cursor: default;
-    opacity: 0.7;
-  }
-
-  .next-button {
-    margin-top: 1rem;
-  }
-
-</style>
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="logo">
-                        <a href="https://party.coop" target="_blank"><img src="logo-white.png"></a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="hamburger">
-                        <span class="line"></span>
-                    </div>
-                    <nav class="nav">
-                        <a class="cross">✕</a>
-                        <a href="https://party.coop/">Home</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <div class="quizProg"></div>
-    </header>
-<!-- Slide 1 -->
-<div class="slide slide1 qslide active">
+<header>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <p><strong>“Ecocide” is just a fancy word for pollution.</strong></p>
-      </div>
-      <div class="col-md-12">
-        <button class="q1a qbutton" data-correct="false">True</button>
-        <button class="q1b qbutton" data-correct="true">False</button>
-        <div class="explanation" style="display:none;">
-          Pollution might be litter in the street. Ecocide means severe and lasting harm to ecosystems — like wiping out a forest, poisoning a river, or causing mass species loss. It’s not just messy; it’s destructive on a serious scale.
+      <div class="col">
+        <div class="logo">
+          <a href="https://party.coop" target="_blank"><img src="logo-white.png"></a>
         </div>
-        <button class="next-button btn btn-primary" style="display:none;">Next</button>
+      </div>
+      <div class="col">
+        <div class="hamburger"><span class="line"></span></div>
+        <nav class="nav">
+          <a class="cross">✕</a>
+          <a href="https://party.coop/">Home</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Slides 1–7 -->
+<div class="slide slide1 qslide">
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>“Ecocide” is just a fancy word for pollution.</strong></p>
+          <button class="q1 qbutton" data-correct="false">True</button>
+          <button class="q1 qbutton" data-correct="true">False</button>
+          <div class="explanation">Pollution might be litter in the street. Ecocide means severe and lasting harm to ecosystems — like wiping out a forest, poisoning a river, or causing mass species loss. It’s not just messy; it’s destructive on a serious scale.</div>
+          <button class="next-button btn btn-primary">Next</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Slide 2 -->
 <div class="slide slide2 qslide">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p><strong>Scotland already has laws that cover this.</strong></p>
-      </div>
-      <div class="col-md-12">
-        <button class="q2a qbutton" data-correct="false">True</button>
-        <button class="q2b qbutton" data-correct="true">False</button>
-        <div class="explanation" style="display:none;">
-          There are environmental regulations, but no specific criminal offence for the kind of large-scale destruction that ecocide describes. The Ecocide (Prevention in Scotland) Bill would change that — by treating it as the serious crime it is.
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Scotland already has laws that cover this.</strong></p>
+          <button class="q2 qbutton" data-correct="false">True</button>
+          <button class="q2 qbutton" data-correct="true">False</button>
+          <div class="explanation">There are environmental regulations, but no specific criminal offence for the kind of large-scale destruction that ecocide describes. The Ecocide (Prevention in Scotland) Bill would change that — by treating it as the serious crime it is.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
-        <button class="next-button btn btn-primary" style="display:none;">Next</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Slide 3 -->
 <div class="slide slide3 qslide">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p><strong>Only giant corporations commit ecocide.</strong></p>
-      </div>
-      <div class="col-md-12">
-        <button class="q3a qbutton" data-correct="false">True</button>
-        <button class="q3b qbutton" data-correct="true">False</button>
-        <div class="explanation" style="display:none;">
-          It’s not just private companies. Public bodies, governments, and individuals in leadership roles can also be responsible — especially when they approve or ignore harmful actions. This is about accountability, not size.
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Only giant corporations commit ecocide.</strong></p>
+          <button class="q3 qbutton" data-correct="false">True</button>
+          <button class="q3 qbutton" data-correct="true">False</button>
+          <div class="explanation">It’s not just private companies. Public bodies, governments, and individuals in leadership roles can also be responsible — especially when they approve or ignore harmful actions. This is about accountability, not size.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
-        <button class="next-button btn btn-primary" style="display:none;">Next</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Slide 4 -->
 <div class="slide slide4 qslide">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p><strong>“Ecocide” is a brand-new term made up by campaigners.</strong></p>
-      </div>
-      <div class="col-md-12">
-        <button class="q4a qbutton" data-correct="false">True</button>
-        <button class="q4b qbutton" data-correct="true">False</button>
-        <div class="explanation" style="display:none;">
-          The word dates back to the 1970s and has been used for decades to describe serious environmental harm. The movement to make it a crime has been gaining momentum worldwide — and Scotland could help lead the way.
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>“Ecocide” is a brand-new term made up by campaigners.</strong></p>
+          <button class="q4 qbutton" data-correct="false">True</button>
+          <button class="q4 qbutton" data-correct="true">False</button>
+          <div class="explanation">The word dates back to the 1970s and has been used for decades to describe serious environmental harm. The movement to make it a crime has been gaining momentum worldwide — and Scotland could help lead the way.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
-        <button class="next-button btn btn-primary" style="display:none;">Next</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Slide 5 -->
 <div class="slide slide5 qslide">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p><strong>Criminalising ecocide would harm the economy.</strong></p>
-      </div>
-      <div class="col-md-12">
-        <button class="q5a qbutton" data-correct="false">True</button>
-        <button class="q5b qbutton" data-correct="true">False</button>
-        <div class="explanation" style="display:none;">
-          In fact, it would help protect it. Environmental damage comes with a big price tag — from flooding to food insecurity. Laws like this create clarity and encourage long-term thinking, not shortcuts.
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Criminalising ecocide would harm the economy.</strong></p>
+          <button class="q5 qbutton" data-correct="false">True</button>
+          <button class="q5 qbutton" data-correct="true">False</button>
+          <div class="explanation">In fact, it would help protect it. Environmental damage comes with a big price tag — from flooding to food insecurity. Laws like this create clarity and encourage long-term thinking, not shortcuts.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
-        <button class="next-button btn btn-primary" style="display:none;">Next</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Slide 6 -->
 <div class="slide slide6 qslide">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p><strong>The proposed Ecocide Bill would only target organisations, not people.</strong></p>
-      </div>
-      <div class="col-md-12">
-        <button class="q6a qbutton" data-correct="false">True</button>
-        <button class="q6b qbutton" data-correct="true">False</button>
-        <div class="explanation" style="display:none;">
-          The Bill would apply to both. People in decision-making positions — not just organisations — could be held accountable. It’s about responsibility at every level.
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>The proposed Ecocide Bill would only target organisations, not people.</strong></p>
+          <button class="q6 qbutton" data-correct="false">True</button>
+          <button class="q6 qbutton" data-correct="true">False</button>
+          <div class="explanation">The Bill would apply to both. People in decision-making positions — not just organisations — could be held accountable. It’s about responsibility at every level.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
-        <button class="next-button btn btn-primary" style="display:none;">Next</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Slide 7 -->
 <div class="slide slide7 qslide">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <p><strong>If Scotland passes this law, it would be among the first countries in the world to do so.</strong></p>
-      </div>
-      <div class="col-md-12">
-        <button class="q7a qbutton" data-correct="true">True</button>
-        <button class="q7b qbutton" data-correct="false">False</button>
-        <div class="explanation" style="display:none;">
-          Only a handful of countries have ecocide laws. If passed, this Bill would put Scotland at the forefront — taking a clear stand that serious harm to nature isn’t just wrong. It’s criminal.
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>If Scotland passes this law, it would be among the first countries in the world to do so.</strong></p>
+          <button class="q7 qbutton" data-correct="true">True</button>
+          <button class="q7 qbutton" data-correct="false">False</button>
+          <div class="explanation">Only a handful of countries have ecocide laws. If passed, this Bill would put Scotland at the forefront — taking a clear stand that serious harm to nature isn’t just wrong. It’s criminal.</div>
+          <button class="next-button btn btn-primary">Finish</button>
         </div>
-        <button class="next-button btn btn-primary" style="display:none;">Finish</button>
       </div>
     </div>
   </div>
 </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
-        integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous">
-    </script>
-
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
 <script>
- document.addEventListener('DOMContentLoaded', function() {
-
-    function menuToggle() {
-        document.querySelector('.nav').classList.toggle('active');
-       }
-    
-       document.querySelector('.hamburger').addEventListener('click', menuToggle);
-       document.querySelector('.cross').addEventListener('click', menuToggle);
-       
-
-       
-    });
-
- 
-
-var voteName = "Supporter";
-
-$("#firstname").change(function () {
-    voteName = $(this).val();
-    $('.first_name').text(voteName)
-});
-
-
-$("#gform_269").submit(function (event) {
-    event.preventDefault();
-    var $form = $(this),
-        url = $form.attr("action");
-    var posting = $.post(url, $form.serialize());
-    nextSlide('.slide14');
-
-
-});
-
-
-
-jQuery('.answerReveal').click(function (e) {
-    jQuery('.answerRevealWrap').toggle();
-});
-
-jQuery('.answer').click(function (e) {
-    nextSlide('.slide15');
-});
-
-jQuery('.twitter_share').click(function (e) {
-    var currentUrl = encodeURIComponent("https://party.coop/constituency-quiz/");
-    var tweet = encodeURIComponent("I got");
-    var score = encodeURIComponent($('#scorePrint').text());
-    var tweetEnd = encodeURIComponent("out of 12 on this quiz of marginal constituencies. Think you've paid more attention to #GE2019 and can equal or beat my score? Try it here! ðŸ‘‡");
-    var space = encodeURIComponent(" ");
-    window.open("https://twitter.com/intent/tweet?text=" + tweet + space + score + space + tweetEnd + space + currentUrl, "_blank", "toolbar=no,scrollbars=no,resizable=yes,width=560,height=560");
-    // initSlider();
-});
-
-jQuery('#slide2_skip').click(function (e) {
-    e.preventDefault();
-    nextSlide('.slide12');
-    // initSlider();
-});
-
-
-jQuery('#slide3_skip').click(function (e) {
-    e.preventDefault();
-    nextSlide('.slide13');
-    // initSlider();
-});
-
-var getPathFromUrl = function getPathFromUrl(url) {
-    return url.split("?")[0];
-};
-
-
-var numberWithCommas = function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
-
-var nextSlide = function nextSlide(el) {
-    var marginHeight = jQuery('.top_margin').height();
-    var nextSlide = jQuery(el).closest('.slide').next();
-    nextSlide.css('display', 'flex');
-    jQuery.scrollTo(nextSlide, 1000, {});
-};
-
-
-jQuery(function () {
-
-
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-});
-
-/**
- * Copyright (c) 2007-2015 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
- * Licensed under MIT
- * @author Ariel Flesler
- * @version 2.1.0
- */
-;
-(function (l) {
-    'use strict';
-    l(['jquery'], function ($) {
-        var k = $.scrollTo = function (a, b, c) {
-            return $(window).scrollTo(a, b, c);
-        };
-        k.defaults = {
-            axis: 'xy',
-            duration: 0,
-            limit: true
-        };
-
-        function isWin(a) {
-            return !a.nodeName || $.inArray(a.nodeName.toLowerCase(), ['iframe', '#document', 'html', 'body']) !== -1;
+for (let i = 1; i <= 7; i++) {
+    $(`.q${i}`).click(function () {
+        $(`.q${i}`).prop('disabled', true);
+        if ($(this).data("correct") === true) {
+            $(this).css('background-color', '#28a745'); // green
+        } else {
+            $(this).css('background-color', '#e4003b'); // red
         }
-        $.fn.scrollTo = function (f, g, h) {
-            if (typeof g === 'object') {
-                h = g;
-                g = 0;
-            }
-            if (typeof h === 'function') {
-                h = {
-                    onAfter: h
-                };
-            }
-            if (f === 'max') {
-                f = 9e9;
-            }
-            h = $.extend({}, k.defaults, h);
-            g = g || h.duration;
-            var j = h.queue && h.axis.length > 1;
-            if (j) {
-                g /= 2;
-            }
-            h.offset = both(h.offset);
-            h.over = both(h.over);
-            return this.each(function () {
-                if (f === null) return;
-                var d = isWin(this),
-                    elem = d ? this.contentWindow || window : this,
-                    $elem = $(elem),
-                    targ = f,
-                    attr = {},
-                    toff;
-                switch (typeof targ) {
-                    case 'number':
-                    case 'string':
-                        if (/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
-                            targ = both(targ);
-                            break;
-                        }
-                        targ = d ? $(targ) : $(targ, elem);
-                        if (!targ.length) return;
-                    case 'object':
-                        if (targ.is || targ.style) {
-                            toff = (targ = $(targ)).offset();
-                        }
-                }
-                var e = $.isFunction(h.offset) && h.offset(elem, targ) || h.offset;
-                $.each(h.axis.split(''), function (i, a) {
-                    var b = a === 'x' ? 'Left' : 'Top',
-                        pos = b.toLowerCase(),
-                        key = 'scroll' + b,
-                        prev = $elem[key](),
-                        max = k.max(elem, a);
-                    if (toff) {
-                        attr[key] = toff[pos] + (d ? 0 : prev - $elem.offset()[pos]);
-                        if (h.margin) {
-                            attr[key] -= parseInt(targ.css('margin' + b), 10) || 0;
-                            attr[key] -= parseInt(targ.css('border' + b + 'Width'), 10) || 0;
-                        }
-                        attr[key] += e[pos] || 0;
-                        if (h.over[pos]) {
-                            attr[key] += targ[a === 'x' ? 'width' : 'height']() * h.over[pos];
-                        }
-                    } else {
-                        var c = targ[pos];
-                        attr[key] = c.slice && c.slice(-1) === '%' ? parseFloat(c) / 100 * max : c;
-                    }
-                    if (h.limit && /^\d+$/.test(attr[key])) {
-                        attr[key] = attr[key] <= 0 ? 0 : Math.min(attr[key], max);
-                    }
-                    if (!i && h.axis.length > 1) {
-                        if (prev === attr[key]) {
-                            attr = {};
-                        } else if (j) {
-                            animate(h.onAfterFirst);
-                            attr = {};
-                        }
-                    }
-                });
-                animate(h.onAfter);
-
-                function animate(a) {
-                    var b = $.extend({}, h, {
-                        queue: true,
-                        duration: g,
-                        complete: a && function () {
-                            a.call(elem, targ, h);
-                        }
-                    });
-                    $elem.animate(attr, b);
-                }
-            });
-        };
-        k.max = function (a, b) {
-            var c = b === 'x' ? 'Width' : 'Height',
-                scroll = 'scroll' + c;
-            if (!isWin(a)) return a[scroll] - $(a)[c.toLowerCase()]();
-            var d = 'client' + c,
-                doc = a.ownerDocument || a.document,
-                html = doc.documentElement,
-                body = doc.body;
-            return Math.max(html[scroll], body[scroll]) - Math.min(html[d], body[d]);
-        };
-
-        function both(a) {
-            return $.isFunction(a) || $.isPlainObject(a) ? a : {
-                top: a,
-                left: a
-            };
-        }
-        $.Tween.propHooks.scrollLeft = $.Tween.propHooks.scrollTop = {
-            get: function get(t) {
-                return $(t.elem)[t.prop]();
-            },
-            set: function set(t) {
-                var a = this.get(t);
-                if (t.options.interrupt && t._last && t._last !== a) {
-                    return $(t.elem).stop();
-                }
-                var b = Math.round(t.now);
-                if (a !== b) {
-                    $(t.elem)[t.prop](b);
-                    t._last = this.get(t);
-                }
-            }
-        };
-        return k;
+        const expl = $(this).closest('.col-md-12').find('.explanation');
+        expl.addClass('show');
+        $(this).closest('.col-md-12').find('.next-button').fadeIn();
     });
-})(typeof define === 'function' && define.amd ? define : function (a, b) {
-    'use strict';
-    if (typeof module !== 'undefined' && module.exports) {
-        module.exports = b(require('jquery'));
-    } else {
-        b(jQuery);
+}
+
+var nextSlide = function(el) {
+    var nextSlide = $(el).closest('.slide').next();
+    if (nextSlide.length) {
+        nextSlide.css('display', 'block'); // reveal next slide
+
+        // Smooth scroll using jQuery animate
+        $('html, body').animate({
+            scrollTop: nextSlide.offset().top
+        }, 600, 'swing'); // 600ms smooth scroll
     }
+};
+
+
+
+
+
+$('.next-button').click(function () {
+    nextSlide(this);
 });
-
-// Quiz
-var q1 = 0;
-var q2 = 0;
-var q3 = 0;
-var q4 = 0;
-var q5 = 0;
-var q6 = 0;
-var q7 = 0;
-
-
-var q1t = 0;
-var q2t = 0;
-var q3t = 0;
-var q4t = 0;
-var q5t = 0;
-var q6t = 0;
-var q7t = 0;
-
-
-var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7;
-
-$(".q1").click(function () {
-    if ($(this).data("correct") === true) {
-        q1 = 1;
-    } else {
-        q1 = 0;
-    }
-    q1t = $(this).text();
-    $('.q1tp').text(q1t);
-
-    if ($(".q1tp").text() == $(".q1tpm").text()) {
-        $(".q1tpl").hide();
-        $(".q1tpp").prepend("<span class='qmark qtick'>âœ“ ");
-
-
-    } else {
-        $(".q1tpl").css('color', '#e4003b');
-        $(".q1tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 1)');
-    nextSlide('.slide1');
-    console.log("Q1");
-});
-
-
-$(".q2").click(function () {
-    if ($(this).data("correct") === true) {
-        q2 = 1;
-    } else {
-        q2 = 0;
-    }
-
-    q2t = $(this).text();
-    $('.q2tp').text(q2t);
-
-    if ($(".q2tp").text() == $(".q2tpm").text()) {
-        $(".q2tpl").hide();
-        $(".q2tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q2tpl").css('color', '#e4003b');
-        $(".q2tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 2)');
-    nextSlide('.slide2');
-});
-
-$(".q3").click(function () {
-    if ($(this).data("correct") === true) {
-        q3 = 1;
-    } else {
-        q3 = 0;
-    }
-
-    q3t = $(this).text();
-    $('.q3tp').text(q3t);
-
-    if ($(".q3tp").text() == $(".q3tpm").text()) {
-        $(".q3tpl").hide();
-        $(".q3tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q3tpl").css('color', '#e4003b');
-        $(".q3tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 3)');
-    nextSlide('.slide3');
-});
-
-$(".q4").click(function () {
-    if ($(this).data("correct") === true) {
-        q4 = 1;
-    } else {
-        q4 = 0;
-    }
-
-    q4t = $(this).text();
-    $('.q4tp').text(q4t);
-
-    if ($(".q4tp").text() == $(".q4tpm").text()) {
-        $(".q4tpl").hide();
-        $(".q4tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q4tpl").css('color', '#e4003b');
-        $(".q4tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 4)');
-    nextSlide('.slide4');
-});
-
-$(".q5").click(function () {
-    if ($(this).data("correct") === true) {
-        q5 = 1;
-    } else {
-        q5 = 0;
-    }
-
-    q5t = $(this).text();
-    $('.q5tp').text(q5t);
-
-    if ($(".q5tp").text() == $(".q5tpm").text()) {
-        $(".q5tpl").hide();
-        $(".q5tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q5tpl").css('color', '#e4003b');
-        $(".q5tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 5)');
-    nextSlide('.slide5');
-});
-
-$(".q6").click(function () {
-    if ($(this).data("correct") === true) {
-        q6 = 1;
-    } else {
-        q6 = 0;
-    }
-
-    q6t = $(this).text();
-    $('.q6tp').text(q6t);
-
-    if ($(".q6tp").text() == $(".q6tpm").text()) {
-        $(".q6tpl").hide();
-        $(".q6tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q6tpl").css('color', '#e4003b');
-        $(".q6tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 6)');
-    nextSlide('.slide6');
-});
-
-$(".q7").click(function () {
-    if ($(this).data("correct") === true) {
-        q7 = 1;
-    } else {
-        q7 = 0;
-    }
-
-    q7t = $(this).text();
-    $('.q7tp').text(q7t);
-
-    if ($(".q7tp").text() == $(".q7tpm").text()) {
-        $(".q7tpl").hide();
-        $(".q7tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q7tpl").css('color', '#e4003b');
-        $(".q7tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 7)');
-    nextSlide('.slide7');
-});
-
-$(".q8").click(function () {
-    if ($(this).data("correct") === true) {
-        q8 = 1;
-    } else {
-        q8 = 0;
-    }
-
-    q8t = $(this).text();
-    $('.q8tp').text(q8t);
-
-    if ($(".q8tp").text() == $(".q8tpm").text()) {
-        $(".q8tpl").hide();
-        $(".q8tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q8tpl").css('color', '#e4003b');
-        $(".q8tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 8)');
-    nextSlide('.slide8');
-});
-
-$(".q9").click(function () {
-    if ($(this).data("correct") === true) {
-        q9 = 1;
-    } else {
-        q9 = 0;
-    }
-
-    q9t = $(this).text();
-    $('.q9tp').text(q9t);
-
-    if ($(".q9tp").text() == $(".q9tpm").text()) {
-        $(".q9tpl").hide();
-        $(".q9tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q9tpl").css('color', '#e4003b');
-        $(".q9tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 9)');
-    nextSlide('.slide9');
-});
-
-$(".q10").click(function () {
-    if ($(this).data("correct") === true) {
-        q10 = 1;
-    } else {
-        q10 = 0;
-    }
-
-    q10t = $(this).text();
-    $('.q10tp').text(q10t);
-
-    if ($(".q10tp").text() == $(".q10tpm").text()) {
-        $(".q10tpl").hide();
-        $(".q10tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q10tpl").css('color', '#e4003b');
-        $(".q10tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 10)');
-    nextSlide('.slide10');
-});
-
-$(".q11").click(function () {
-    if ($(this).data("correct") === true) {
-        q11 = 1;
-    } else {
-        q11 = 0;
-    }
-
-    q11t = $(this).text();
-    $('.q11tp').text(q11t);
-
-    if ($(".q11tp").text() == $(".q11tpm").text()) {
-        $(".q11tpl").hide();
-        $(".q11tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q11tpl").css('color', '#e4003b');
-        $(".q11tpp").prepend("<span class='qmark qcross'>x ");
-    }
-    $(".quizProg").css('width', 'calc((100% / 12) * 11)');
-    nextSlide('.slide11');
-});
-
-
-
-$(".q12").click(function () {
-    if ($(this).data("correct") === true) {
-        q12 = 1;
-    } else {
-        q12 = 0;
-    }
-
-    q12t = $(this).text();
-    $('.q12tp').text(q12t);
-
-    if ($(".q12tp").text() == $(".q12tpm").text()) {
-        $(".q12tpl").hide();
-        $(".q12tpp").prepend("<span class='qmark qtick'>âœ“ ");
-    } else {
-        $(".q12tpl").css('color', '#e4003b');
-        $(".q12tpp").prepend("<span class='qmark qcross'>x ");
-    }
-
-
-    var answer = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12;
-    $("#scorePrint").text(answer);
-    $(".quizProg").css('width', 'calc((100% / 12) * 12)');
-    nextSlide('.slide12');
-
-});
-
-$(".showSignupSlide").click(function () {
-    nextSlide('.slide13');
-});
-
-$(".answer").click(function () {
-    nextSlide('.slide14');
-});
-
-$(".petitionSign").click(function () {
-    nextSlide('.slide14');
-});
-
-$(document).ready(function() {
-    $('.facebook_share').click(function(e) {
-        e.preventDefault();
-        window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
-        return false;
-    });
-});
-
-// function submitAndShare() {
-//     var fbfirstname = "I"
-
-//     if ($('#firstname').val()) {
-//         fbfirstname = $('#firstname').val();
-//     }
-
-//     var fbanswer = $('#scorePrint').text();
-
-//     var title = fbfirstname + " got " + fbanswer + " out of 12 on this quiz!"
-//     var description = "Can you do better? Take the quiz now!";
-
-//     shareOverrideOGMeta(window.location.href,
-//         title,
-//         description);
-
-//     return false;
-
-
-// }
-
-// function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription) {
-//     FB.ui({
-//             method: 'share_open_graph',
-//             action_type: 'og.shares',
-//             action_properties: JSON.stringify({
-//                 object: {
-//                     'og:url': overrideLink,
-//                     'og:title': overrideTitle,
-//                     'og:description': overrideDescription,
-//                     'og:image': 'https://party.coop/constituency-quiz/images/sharer.png'
-//                 }
-//             })
-//         },
-//         function (response) {
-//             // Action after response
-//         });
-// }
-
-// function shareOriginal() {
-//     FB.ui({
-//             method: 'share',
-//             href: window.location.href
-//         },
-//         function (response) {
-//             // Action after response
-//         });
-
-//     return false;
-// }
 </script>
-
 </body>
 </html>

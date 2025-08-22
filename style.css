@@ -164,20 +164,23 @@ nav.nav a.cross {
     margin-bottom: 2rem;
 }
 
-.slide {
+.slideInner {
     min-height: 100vh;
     padding: 2rem 0;
     padding-top: calc(85px + 1rem);
     background: #faf8f4;
     display: flex;
     align-items: center;
-    display: none;
+}
+
+.slide {
+   display: none; 
 }
 
 .slide1 {
     padding-top: calc(85px + 1rem);
     min-height: calc(100vh);
-    display: flex;
+    display: block;
 }
 
 .qslide .col-md {
@@ -542,3 +545,31 @@ footer {
     display: flex;
     justify-content: center;
 }
+
+
+/* New */
+
+.qbutton {
+    margin: 0.3rem 0.5rem 0.3rem 0;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .qbutton:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+  .next-button {
+    margin-top: 1rem;
+    display: none;
+  }
+  .explanation {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  .explanation.show {
+    max-height: 500px; /* large enough for text */
+    opacity: 1;
+  }
