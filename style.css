@@ -1,0 +1,544 @@
+body {
+    font-family: "Archivo", sans-serif;
+}
+
+h1 { 
+    font-size: 1.25rem;
+}
+
+h1 span {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-family: 'Archivo Black', 'Archivo', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff;
+    background: #e4003b;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+
+    h1 { 
+        font-size: 2.5rem;
+    }
+    h1 span {
+        font-size: 2.5rem;
+  }
+
+  h1 span br {
+      display: none;
+  }
+}
+
+header {
+    background: #3f1d70;
+    padding: 1rem 0;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    border-bottom: 10px solid #ddd;
+}
+
+.quizProg {
+    width: 0;
+    height: 10px;
+    position: absolute;
+    bottom: -10px;
+    background: #11ad8e;
+    transition: 1s ease all;
+}
+
+header .logo img {
+    width: 150px;
+    max-width: 100%
+}
+
+.hamburger {
+    width: 30px;
+    height: 18px;
+    position: relative;
+    margin-left: auto;
+    order: 2;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.hamburger:before, .hamburger:after {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 3px;
+	background: white;
+	position: absolute;
+	}
+
+.hamburger:before {
+    top: 1px;
+}
+
+.hamburger:after {
+    bottom: 0;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    display: block;
+    background: white;
+    position: absolute;
+    top: 8px;
+}
+
+header .col {
+    align-self: center;
+}
+
+nav.nav {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+	right: -100%;
+    transition: 0.5s all ease;
+    z-index: 999;
+}
+
+nav.nav.active {
+	right: 0;
+}
+
+a.cross {
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+nav.nav {
+    flex-direction: column;
+    background: #11ad8e;
+    padding: 2rem;
+    color: white;
+}
+
+nav.nav a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+nav.nav a.cross {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+    nav.nav {
+        -webkit-box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+        -moz-box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+        box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+        width: 300px;
+        right: -400px;
+
+    }
+}
+
+
+/* Slides */
+
+.topIntro p {
+    margin-bottom: 0.5rem;
+}
+
+.topIntro p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.slide {
+    min-height: 100vh;
+    padding: 2rem 0;
+    padding-top: calc(85px + 1rem);
+    background: #faf8f4;
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+.slide1 {
+    padding-top: calc(85px + 1rem);
+    min-height: calc(100vh);
+    display: flex;
+}
+
+.qslide .col-md {
+    align-self: center;
+    text-align: center;
+}
+
+.slidePrompt {
+    background: #11ad8e;
+    color: white;
+    text-align: center;
+}
+
+.consituencyOutline {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.qbutton {
+    background: #11ad8e;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    font-family: "Archivo Black";
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    font-size: 1.5rem;
+}
+
+.qbutton:focus {
+    outline: none;
+}
+
+
+button.outline {
+    background: transparent;
+    border: 3px solid white;
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    color: white;
+}
+
+button {
+    background: white;
+    border: 3px solid white;
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    color: black;
+    max-width: 100%;
+}
+
+a.answer {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.slideAnswer {
+    background: #11ad8e;
+    color: white;
+    text-align: center;
+}
+
+.answerRevealWrap {
+    display: none;
+    text-align: left;
+    padding: 2rem;
+    background: #faf8f4;
+    color: black;
+    margin: 0 0 2rem 0;
+    -webkit-box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+    box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+}
+
+.answerReveal {
+    margin-bottom: 2rem;
+}
+
+.qmark.qtick {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #11ad8e;
+}
+
+.qmark.qcross {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #e4003b;
+}
+
+button:focus {
+    outline: none;
+}
+
+.facebook_share, .twitter_share {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+button.answerReveal {
+    background: none;
+    border: none;
+    padding: 0;
+    color: white;
+    text-decoration: underline;
+}
+
+.slideAnswer a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Form style */
+
+.facebook_share, .twitter_share {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+a.button.facebook_share {
+    display: inline-block;
+    text-decoration: none;
+}
+
+button.outline.button.answerReveal {}
+
+button.answerReveal {
+    background: none;
+    border: none;
+    padding: 0;
+    color: white;
+    text-decoration: underline;
+}
+
+label {
+    display: none;
+}
+
+.gfield_radio label {
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+form ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+form ul li {}
+
+input[type=text], input[type=email] {
+    color: #333333;
+    background-color: transparent;
+    border-width: 0;
+    border-color: #eeeeee;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    outline: none;
+    width: 100%;
+    border-bottom: 10px solid #11ad8e;
+}
+
+.consent-checkbox label {
+    display: inline;
+}
+
+.consent-checkbox {
+    display: none;
+}
+
+.name_first, .name_last {
+    width: 100%;
+    display: block;
+    float: left;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+form input[type=submit] {
+    background: #11ad8e;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    font-family: "Archivo Black";
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    font-size: 1.25rem;
+}
+
+.consent-radio label {
+    display: inline-block;
+}
+
+.ginput_container_radio li {
+    display: flex;
+    /* align-content: center; */
+    align-items: center;
+}
+
+span.gfield_required {
+    display: none;
+}
+
+a.form-privacy {
+    color: #11ad8e;
+}
+
+form {
+    text-align: left;
+    padding: 2rem;
+    background: #faf8f4;
+    color: black;
+    margin: 0 0 2rem 0;
+    -webkit-box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+    box-shadow: 0 15px 35px 0 rgba(0,0,0,.3);
+}
+
+@media only screen and (min-width: 768px) {
+    .name_first, .name_last {
+        width: 50%;
+    }
+    .name_first {
+        padding-right: 1rem;
+    }
+    form input[type=submit] {
+        font-size: 1.5rem;
+    }
+
+}
+
+.showSignupSlide {
+    margin-bottom: 0.5rem;
+}
+
+.highlight {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-family: 'Archivo Black', 'Archivo', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #11ad8e;
+    background: white;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .highlight {
+        font-size: 2.5rem;
+    }
+}
+
+span#scorePrint {
+    color: #e4003b;
+}
+
+.facebook_share, .twitter_share {
+    background: #11ad8e;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    font-family: "Archivo Black";
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.facebook_share {
+    background: #3b5998;
+}
+
+a.facebook_share {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+.twitter_share {
+    background: #00aced;
+}
+
+h3 {
+    font-family: "Archivo Black";
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+}
+
+.slideAnswer a {
+    margin-bottom: 2rem;
+}
+
+.slideSign .highlight {
+    /* color: white; */
+    background: none;
+    padding: 0;
+}
+
+button.showSignupSlide {
+    background: white;
+    border: 0;
+    border-radius: 2px;
+    color: #11ad8e;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    font-family: "Archivo Black";
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-family: "Archivo Black";
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+@media only screen and (min-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+
+footer {
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 1rem;
+    background: #faf8f4;
+    display: flex;
+    justify-content: center;
+}
