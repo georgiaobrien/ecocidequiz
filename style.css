@@ -164,6 +164,10 @@ nav.nav a.cross {
     margin-bottom: 2rem;
 }
 
+.slide {
+    background: #faf8f4;
+}
+
 .slideInner {
     min-height: 100vh;
     padding: 2rem 0;
@@ -201,7 +205,7 @@ nav.nav a.cross {
 }
 
 .qbutton {
-    background: #11ad8e;
+    background: #3f1d70;
     border: 0;
     border-radius: 2px;
     color: white;
@@ -211,7 +215,20 @@ nav.nav a.cross {
     font-family: "Archivo Black";
     text-transform: uppercase;
     letter-spacing: -0.5px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.next-button {
+    width: 100%;
+    border: 3px solid #3f1d70;
+    border-radius: 2px;
+    background: none;
+    color: #3f1d70;
+    margin: 0 0 1rem 0;
+    font-family: "Archivo Black";
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
 }
 
 .qbutton:focus {
@@ -549,15 +566,10 @@ footer {
 
 /* New */
 
-.qbutton {
-    margin: 0.3rem 0.5rem 0.3rem 0;
-    font-size: 1.1rem;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
+
   .qbutton:disabled {
     cursor: default;
-    opacity: 0.7;
+
   }
   .next-button {
     margin-top: 1rem;
