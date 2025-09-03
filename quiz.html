@@ -1,325 +1,991 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ecocide Quiz Update</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #3f1d70 0%, #764ba2 100%);
+    min-height: 100vh;
+}
 
-<!-- 
-    <script>
-            window.fbAsyncInit = function() {
-              FB.init({
-                appId            : '486544298880089',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v2.10'
-              });
-              FB.AppEvents.logPageView();
-            };
-          
-            (function(d, s, id){
-               var js, fjs = d.getElementsByTagName(s)[0];
-               if (d.getElementById(id)) {return;}
-               js = d.createElement(s); js.id = id;
-               js.src = "//connect.facebook.net/en_US/sdk.js";
-               fjs.parentNode.insertBefore(js, fjs);
-             }(document, 'script', 'facebook-jssdk'));
-          </script> -->
+h1 { 
+    font-size: 1.25rem;
+}
 
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="https://party.coop/wp-content/themes/coop-2019/img/icons/apple-touch-icon.png?v=476e05ganj">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://party.coop/wp-content/themes/coop-2019/img/icons/favicon-32x32.png?v=476e05ganj">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="https://party.coop/wp-content/themes/coop-2019/img/icons/favicon-16x16.png?v=476e05ganj">
-    <link rel="manifest" href="https://party.coop/wp-content/themes/coop-2019/img/icons/site.webmanifest?v=476e05ganj">
-    <link rel="mask-icon"
-        href="https://party.coop/wp-content/themes/coop-2019/img/icons/safari-pinned-tab.svg?v=476e05ganj"
-        color="#3f1d70">
-    <link rel="shortcut icon" href="https://party.coop/wp-content/themes/coop-2019/img/icons/favicon.ico?v=476e05ganj">
-    <meta name="msapplication-TileColor" content="#3f1d70">
-    <meta name="msapplication-config"
-        content="https://party.coop/wp-content/themes/coop-2019/img/icons/browserconfig.xml?v=476e05ganj">
-    <meta name="theme-color" content="#3f1d70">
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Archivo:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
-        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+h1 span {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #fff;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    padding: 0.75rem 1.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+}
+
+@media only screen and (min-width: 768px) {
+    h1 { 
+        font-size: 2.5rem;
+    }
+    h1 span {
+        font-size: 2.5rem;
+        padding: 1rem 2rem;
+  }
+
+  h1 span br {
+      display: none;
+  }
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1rem 0;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.quizProg {
+    width: 0;
+    height: 6px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(90deg, #11ad8e, #00d4aa);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 0 15px rgba(17, 173, 142, 0.5);
+}
+
+header .logo img {
+    width: 150px;
+    max-width: 100%
+}
+
+.hamburger {
+    width: 30px;
+    height: 18px;
+    position: relative;
+    margin-left: auto;
+    order: 2;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.hamburger:before, .hamburger:after {
+	content: "";
+	display: block;
+	width: 30px;
+	height: 3px;
+	background: #333;
+	position: absolute;
+	border-radius: 2px;
+	transition: all 0.3s ease;
+	}
+
+.hamburger:before {
+    top: 1px;
+}
+
+.hamburger:after {
+    bottom: 0;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    display: block;
+    background: #333;
+    position: absolute;
+    top: 8px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+header .col {
+    align-self: center;
+}
+
+nav.nav {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+	right: -100%;
+    transition: 0.5s all ease;
+    z-index: 999;
+}
+
+nav.nav.active {
+	right: 0;
+}
+
+a.cross {
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+nav.nav {
+    flex-direction: column;
+    background: linear-gradient(135deg, #11ad8e, #00d4aa);
+    padding: 2rem;
+    color: white;
+}
+
+nav.nav a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav.nav a:hover {
+    transform: translateX(10px);
+    opacity: 0.8;
+}
+
+nav.nav a.cross {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 768px) {
+    nav.nav {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        width: 300px;
+        right: -400px;
+        border-radius: 20px 0 0 20px;
+    }
+}
+
+/* Slides */
+
+.topIntro p {
+    margin-bottom: 0.5rem;
+}
+
+.topIntro p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.slide {
+    background: transparent;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slideInner {
+    min-height: 100vh;
+    padding: 2rem 0;
+    padding-top: calc(85px + 2rem);
+    display: flex;
+    align-items: center;
+}
+
+.slide1 {
+    padding-top: calc(85px + 2rem);
+    min-height: calc(100vh);
+}
+
+.qslide .col-md-12 {
+    align-self: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.qslide p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.slidePrompt {
+    background: linear-gradient(135deg, #11ad8e, #00d4aa);
+    color: white;
+    text-align: center;
+}
+
+.slidePrompt .slideInner {
+    background: transparent;
+}
+
+.slidePrompt .col-md-8 {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #2d3748;
+}
+
+.qbutton {
+    background: linear-gradient(135deg, #3f1d70, #764ba2);
+    border: none;
+    border-radius: 16px;
+    color: white;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1.25rem 2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.qbutton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+.qbutton:hover::before {
+    left: 100%;
+}
+
+.qbutton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+}
+
+.qbutton:active {
+    transform: translateY(-1px);
+}
+
+.next-button {
+    width: 100%;
+    border: 3px solid #3f1d70;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #3f1d70;
+    margin: 1rem 0;
+    padding: 1.25rem 2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+}
+
+.next-button:hover {
+    background: #3f1d70;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+}
+
+.qbutton:focus, .next-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.25);
+}
+
+button.outline {
+    background: transparent;
+    border: 3px solid white;
+    padding: 0.75rem 2rem;
+    display: inline-block;
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+button.outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+button {
+    background: white;
+    border: 3px solid white;
+    padding: 0.75rem 2rem;
+    display: inline-block;
+    color: black;
+    max-width: 100%;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a.answer {
+    display: block;
+    background: none;
+    border: none;
+    color: #2d3748;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a.answer:hover {
+    color: #3f1d70;
+}
+
+.slideAnswer {
+    background: linear-gradient(135deg, #11ad8e, #00d4aa);
+    color: white;
+    text-align: center;
+}
+
+.slideAnswer .slideInner {
+    background: transparent;
+}
+
+.slideAnswer .col-md {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #2d3748;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.answerRevealWrap {
+    display: none;
+    text-align: left;
+    padding: 2rem;
+    background: rgba(248, 250, 252, 0.95);
+    color: #2d3748;
+    margin: 2rem 0;
+    border-radius: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.answerReveal {
+    margin-bottom: 2rem;
+}
+
+.qmark.qtick {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #10b981;
+}
+
+.qmark.qcross {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #ef4444;
+}
+
+button:focus {
+    outline: none;
+}
+
+.facebook_share, .twitter_share {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+button.answerReveal {
+    background: linear-gradient(135deg, #3f1d70, #764ba2);
+    border: none;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+button.answerReveal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+}
+
+.slideAnswer a {
+    color: #3f1d70;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.slideAnswer a:hover {
+    color: #5a5fd7;
+}
+
+/* Form style */
+
+label {
+    display: none;
+}
+
+.gfield_radio label {
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+form ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+input[type=text], input[type=email] {
+    color: #2d3748;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(226, 232, 240, 0.8);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+input[type=text]:focus, input[type=email]:focus {
+    border-color: #3f1d70;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+    background: white;
+}
+
+.consent-checkbox label {
+    display: inline;
+}
+
+.consent-checkbox {
+    display: none;
+}
+
+.name_first, .name_last {
+    width: 100%;
+    display: block;
+    float: left;
+    margin-bottom: 1rem;
+}
+
+form input[type=submit] {
+    background: linear-gradient(135deg, #11ad8e, #00d4aa);
+    border: none;
+    border-radius: 16px;
+    color: white;
+    width: 100%;
+    margin: 2rem 0 1rem 0;
+    padding: 1.25rem 2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(17, 173, 142, 0.3);
+}
+
+form input[type=submit]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(17, 173, 142, 0.4);
+}
+
+.consent-radio label {
+    display: inline-block;
+    font-weight: 500;
+    color: #4a5568;
+    margin-left: 0.5rem;
+}
+
+.ginput_container_radio li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.ginput_container_radio li:hover {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+input[type="radio"] {
+    margin-right: 0.75rem;
+    transform: scale(1.2);
+    accent-color: #3f1d70;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.75rem;
+    transform: scale(1.2);
+    accent-color: #3f1d70;
+}
+
+span.gfield_required {
+    display: none;
+}
+
+a.form-privacy {
+    color: #3f1d70;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a.form-privacy:hover {
+    text-decoration: underline;
+}
+
+form {
+    text-align: left;
+    padding: 0;
+    background: transparent;
+    color: #2d3748;
+    margin: 0;
+    box-shadow: none;
+}
+
+.slideSign {
+    background: linear-gradient(135deg, #3f1d70, #764ba2);
+}
+
+.slideSign .slideInner {
+    background: transparent;
+}
+
+.slideSign .col-md-5, .slideSign .col-md-6 {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .name_first, .name_last {
+        width: 50%;
+    }
+    .name_first {
+        padding-right: 1rem;
+    }
+    form input[type=submit] {
+        font-size: 1.25rem;
+    }
+    .slideSign .col-md-5, .slideSign .col-md-6 {
+        margin-bottom: 0;
+    }
+}
+
+.showSignupSlide {
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #3f1d70;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem 1.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+@media only screen and (min-width: 768px) {
+    .highlight {
+        font-size: 2rem;
+    }
+}
+
+span#scorePrint {
+    color: #3f1d70;
+    font-weight: 900;
+}
+
+.facebook_share, .twitter_share {
+    background: linear-gradient(135deg, #3f1d70, #764ba2);
+    border: none;
+    border-radius: 16px;
+    color: white;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1.25rem 2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.facebook_share {
+    background: linear-gradient(135deg, #3b5998, #4c70ba);
+    color: white;
+}
+
+.facebook_share:hover, .twitter_share:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+}
+
+a.facebook_share {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
 
 
-    <meta property="og:title" content="Can you place these 12 marginal constituencies on a map?">
-    <meta property="og:description" content="Test your political geography now!">
-    <meta property="og:image" content="https://party.coop/constituency-quiz/images/sharer.png">
-    <meta property="og:url" content="https://party.coop/constituency-quiz/">
+a.facebook_share:hover, a.facebook_share:active  {
+    color: white;
+}
 
-    <meta name="twitter:title" content="Can you place these 12 marginal constituencies on a map?">
-    <meta name="twitter:description" content="Test your political geography now!">
-    <meta name="twitter:image" content="https://party.coop/constituency-quiz/images/sharer.png">
-    <meta name="twitter:card" content="summary_large_image">
+.twitter_share {
+    background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+}
 
-    <link rel="stylesheet" href="style.css">
+h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+    color: #2d3748;
+}
 
+button.showSignupSlide {
+    background: linear-gradient(135deg, #11ad8e, #00d4aa);
+    border: none;
+    border-radius: 16px;
+    color: white;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    padding: 1.25rem 2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(17, 173, 142, 0.3);
+}
 
+button.showSignupSlide:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(17, 173, 142, 0.4);
+}
 
-    <title>Can you place these 12 marginal constituencies on a map? – Co-operative Party</title>
-    <!-- Facebook Pixel Code -->
-<script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1657544437824326');
-        fbq('track', 'PageView');
-      </script>
-      <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1657544437824326&ev=PageView&noscript=1"
-      /></noscript>
-      <!-- End Facebook Pixel Code -->
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-24249851-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: #2d3748;
+}
 
-  gtag('config', 'UA-24249851-1');
-</script>
+@media only screen and (min-width: 768px) {
+    h2 {
+        font-size: 2.25rem;
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* Enhanced animations and interactions */
+.qbutton:disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+.next-button {
+    margin-top: 1rem;
+    display: none;
+}
+
+.explanation {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    margin-top: 1rem;
+    padding: 0 1.5rem;
+    background: rgba(248, 250, 252, 0.8);
+    border-radius: 12px;
+    border-left: 4px solid #3f1d70;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25)
+}
+
+.explanation.show {
+    max-height: 300px;
+    opacity: 1;
+    padding: 1.5rem;
+}
+
+/* Smooth slide transitions */
+.slide {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.7);
+}
+</style>
+
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="logo">
-                        <a href="https://party.coop" target="_blank"><img src="logo-white.png"></a>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="hamburger">
-                        <span class="line"></span>
-                    </div>
-                    <nav class="nav">
-                        <a class="cross">✕</a>
-                        <a href="https://party.coop/">Home</a>
-                    </nav>
-                </div>
-            </div>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="logo">
+          <a href="https://party.coop" target="_blank"><img src="logo-white.png"></a>
         </div>
-        <div class="quizProg"></div>
-    </header>
-    <div class="slide1 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <div class="topIntro">
-                        <h1>Take our mythbusting <span>Ecocide quiz</span></h1>
-                        <p><strong>Following the General Election closely? Think you can tell your Blyth Valleys from
-                                your Batleys?</strong></p>
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Glasgow NE.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q1 q1a qbutton q-correct">Glasgow North East</button>
-                    <button class="q1 q1b qbutton">Edinburgh North and Leith</button>
-                    <button class="q1 q1c qbutton">Berwick upon Tweed</button>
-                </div>
-            </div>
-        </div>
+      </div>
+      <div class="col">
+        <div class="hamburger"><span class="line"></span></div>
+        <nav class="nav">
+          <a class="cross">✕</a>
+          <a href="https://party.coop/">Home</a>
+        </nav>
+      </div>
     </div>
+  </div>
+  <div class="quizProg"></div>
+</header>
 
-    <div class="slide2 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Rutherglen and Hamilton West.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q2 q2a qbutton">Dumfries and Galloway</button>
-                    <button class="q2 q2b qbutton">Glasgow Central</button>
-                    <button class="q2 q2c qbutton q-correct">Rutherglen and Hamilton West</button>
-                </div>
-            </div>
+<!-- Slides 1–7: all pre-rendered, show first one by default -->
+<div class="slide slide1 qslide active">
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>"Ecocide" is just a fancy word for pollution.</strong></p>
+          <button class="q1 qbutton" data-correct="false">True</button>
+          <button class="q1 qbutton" data-correct="true">False</button>
+          <div class="explanation">Pollution might be litter in the street. Ecocide means severe and lasting harm to ecosystems — like wiping out a forest, poisoning a river, or causing mass species loss. It's not just messy; it's destructive on a serious scale.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="slide3 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Stroud.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q3 q3a qbutton">Gloucester</button>
-                    <button class="q3 q3b qbutton q-correct">Stroud</button>
-                    <button class="q3 q3c qbutton">Loughborough</button>
-                </div>
-            </div>
+<div class="slide slide2 qslide">
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Scotland already has laws that cover this.</strong></p>
+          <button class="q2 qbutton" data-correct="false">True</button>
+          <button class="q2 qbutton" data-correct="true">False</button>
+          <div class="explanation">There are environmental regulations, but no specific criminal offence for the kind of large-scale destruction that ecocide describes. The Ecocide (Scotland) Bill would change that — by treating it as the serious crime it is.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="slide4 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Wrexham.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q4 q4a qbutton">Ynys Mon</button>
-                    <button class="q4 q4b qbutton">Birkenhead</button>
-                    <button class="q4 q4c qbutton q-correct">Wrexham</button>
-                </div>
-            </div>
+<div class="slide slide3 qslide">
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Only giant corporations commit ecocide.</strong></p>
+          <button class="q3 qbutton" data-correct="false">True</button>
+          <button class="q3 qbutton" data-correct="true">False</button>
+          <div class="explanation">It's not just private companies. Public bodies, governments, and individuals in leadership roles can also be responsible — especially when they approve or ignore harmful actions. This is about accountability, not size.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="slide5 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Stoke on Trent Central.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q5 q5a qbutton">Don Valley</button>
-                    <button class="q5 q5b qbutton q-correct">Stoke on Trent Central</button>
-                    <button class="q5 q5c qbutton">Stafford</button>
-                </div>
-            </div>
+<div class="slide slide4 qslide">
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>"Ecocide" is a brand-new term made up by campaigners.</strong></p>
+          <button class="q4 qbutton" data-correct="false">True</button>
+          <button class="q4 qbutton" data-correct="true">False</button>
+          <div class="explanation">The word dates back to the 1970s and has been used for decades to describe serious environmental harm. The movement to make it a crime has been gaining momentum worldwide — and Scotland could help lead the way.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="slide6 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Leeds NW.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q6 q6a qbutton q-correct">Leeds North West</button>
-                    <button class="q6 q6b qbutton">Cleethorpes</button>
-                    <button class="q6 q6c qbutton">Sheffield Hallam</button>
-                </div>
-            </div>
+<div class="slide slide5 qslide">
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>Criminalising ecocide would harm the economy.</strong></p>
+          <button class="q5 qbutton" data-correct="false">True</button>
+          <button class="q5 qbutton" data-correct="true">False</button>
+          <div class="explanation">In fact, it would help protect it. Environmental damage comes with a big price tag — from flooding to food insecurity. Laws like this create clarity and encourage long-term thinking, not shortcuts.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="slide7 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Plymouth Sutton and Devonport.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q7 q7a qbutton">Exeter</button>
-                    <button class="q7 q7b qbutton q-correct">Plymouth Sutton and Devonport</button>
-                    <button class="q7 q7c qbutton">Brighton Pavilion</button>
-                </div>
-            </div>
+<div class="slide slide6 qslide">
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>The proposed Ecocide Bill would only target organisations, not people.</strong></p>
+          <button class="q6 qbutton" data-correct="false">True</button>
+          <button class="q6 qbutton" data-correct="true">False</button>
+          <div class="explanation">The Bill would apply to both. People in decision-making positions — not just organisations — could be held accountable. It's about responsibility at every level.</div>
+          <button class="next-button btn btn-primary">Next</button>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="slide8 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Birmingham Edgbaston.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q8 q8a qbutton">West Bromwich East</button>
-                    <button class="q8 q8b qbutton">South Holland and the Deepings</button>
-                    <button class="q8 q8c qbutton q-correct">Birmingham Edgbaston</button>
-                </div>
-            </div>
+<div class="slide slide7 qslide">
+  <div class="slideInner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong>If Scotland passes this law, it would be among the first countries in the world to do so.</strong></p>
+          <button class="q7 qbutton" data-correct="true">True</button>
+          <button class="q7 qbutton" data-correct="false">False</button>
+          <div class="explanation">Only a handful of countries have ecocide laws. If passed, this Bill would put Scotland at the forefront — taking a clear stand that serious harm to nature isn't just wrong. It's criminal.</div>
+          <button class="next-button btn btn-primary">Finish</button>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="slide9 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Blyth Valley.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q9 q9a qbutton">Newcastle North</button>
-                    <button class="q9 q9b qbutton q-correct">Blyth Valley</button>
-                    <button class="q9 q9c qbutton">Carlisle</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="slide10 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Stalybridge and Hyde.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q10 q10a qbutton">High Peak</button>
-                    <button class="q10 q10b qbutton q-correct">Stalybridge and Hyde</button>
-                    <button class="q10 q10c qbutton">Slough</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="slide11 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Batley and Spen.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q11 q11a qbutton q-correct">Batley and Spen</button>
-                    <button class="q11 q11b qbutton">Shipley</button>
-                    <button class="q11 q11c qbutton">Ashford</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="slide12 slide qslide">
-        <div class="container">
-            <div class="row">
-                <div class="col-md">
-                    <img src="images/Redcar.png" class="consituencyOutline"></div>
-                <div class="col-md offset-md-1">
-                    <button class="q12 q12a qbutton">Hartlepool</button>
-                    <button class="q12 q12b qbutton">Broadland</button>
-                    <button class="q12 q12c qbutton q-correct">Redcar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="slide13 slide slidePrompt">
+ <div class="slide8 slide slidePrompt">
+    <div class="slideInner">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="topIntro">
-                        <h2>Well done! Did you know the 12 constituencies featured in this quiz were the 12 most marginal Labour & Co-operative seats at the last election?</h2>
-                        <p>We need as many people as possible to campaign to keep these seats. <strong>Before we calculate your score</strong>, will you add your name now to find out how <strong>you</strong> can help elect MPs dedicated to building a Britain where wealth and power are shared?</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <button class="showSignupSlide">Yes, I'll add my name!</button>
+                        <h2>Before we calculate your score...</h2>
+                        <p>We need as many people as possible to campaign to for an Ecocide law in Scotland. <strong>Before we calculate your score</strong>, will you add your name now in support of the Bill and find out what more <strong>you</strong> can do to help this campaign?</p>
+                        <button class="showSignupSlide">Yes, I'll add my name!</button>
                     <a class="answer">No I don't want to help, just tell me my score.</a>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
-
-    <div class="slide14 slide slideSign">
-
+ </div>
+    <div class="slide9 slide slideSign">
+  <div class="slideInner">
 
         <div class="container">
             <div class="row">
-                <div class="col-md-5 mr-auto">
-                    <h2>Build a Britain where wealth and power are shared</h2>
-                    <p>The General Election on 12th December is fast approaching, and we need as many people as possible to help us campaign to elect more Labour & Co-operative MPs. Add your name now and we'll send you updates on how you can get involved to build a Britain where wealth and power are shared.</p>
-                </div>
                 <div class="col-md-6">
+                    <h2>Take a stand against ecocide</h2>
+                    <p>Scottish Co-operative Party MSP Monica Lennon has submitted the final proposal for her Ecocide (Scotland) Bill. The Bill aims to:</p>
+<ul>
+<li>Make harming the environment a serious offence through introducing a crime of ecocide.</li>
+<li>Deter harm through tough sanctions, including prison sentences.</li>
+<li>Ensure Scotland keeps pace with ecocide law developments in Europe and internationally.</li>
+</ul><p>
+The consultation on this Bill demonstrated overwhelming support for an ecocide law – 95% of responses were in favour of introducing a crime of ecocide.
+</p><p>
+Thanks to hundreds of campaigners writing to their MSPs, this Bill now has cross-party support and can proceed to the next step in the Scottish Parliament. If you back making polluters pay, add your name now to back the campaign for an Ecocide Bill.</p>
+                </div>
+                <div class="col-md-5 offset-md-1">
                         <form method="post" enctype="multipart/form-data" target="gform_ajax_frame_269" id="gform_269" action="https://party.coop/ge2019candidates-quiz#gf_269">
                             
                             <div class="gform_body"><ul id="gform_fields_269" class="gform_fields top_label form_sublabel_below description_below"><li id="field_269_2" class="gfield field_sublabel_hidden_label field_description_below hidden_label gfield_visibility_visible form-group"><label class="gfield_label gfield_label_before_complex">Name</label><div class="ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name" id="input_269_2">
@@ -354,71 +1020,22 @@
             </div>
         </div>
     </div>
-
-    <div class="slide15 slide slideAnswer">
+    </div>
+    <div class="slide10 slide slideAnswer">
+        <div class="slideInner">
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <h2><span class="highlight">You got <span id="scorePrint">0</span> out of 12 correct</span></h2>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <button class="answerReveal">Your answer breakdown</button>
-                        </div>
-                    </div>
-                    <div class="answerRevealWrap">
-                        <div class="row">
-
-                            <div class="col-md">
-                                <p class="q1tpp qtpp">Q1. <span class="q1tpm">Glasgow North East</span> <span
-                                        class="q1tpl">(You said <span class="q1tp"></span>)</span>
-                                </p>
-                                <p class="q2tpp qtpp">Q2. <span class="q2tpm">Rutherglen and Hamilton West</span> <span
-                                        class="q2tpl">(You said <span class="q2tp"></span>)</span>
-                                </p>
-                                <p class="q3tpp qtpp">Q3. <span class="q3tpm">Stroud</span> <span class="q3tpl">(You
-                                        said <span class="q3tp"></span>)</span>
-                                </p>
-                                <p class="q4tpp qtpp">Q4. <span class="q4tpm">Wrexham</span> <span class="q4tpl">(You
-                                        said <span class="q4tp"></span>)</span>
-                                </p>
-                                <p class="q5tpp qtpp">Q5. <span class="q5tpm">Stoke on Trent Central</span> <span
-                                        class="q5tpl">(You said <span class="q5tp"></span>)</span>
-                                </p>
-                                <p class="q6tpp qtpp">Q6. <span class="q6tpm">Leeds North West</span> <span
-                                        class="q6tpl">(You said <span class="q6tp"></span>)</span>
-                                </p>
-                            </div>
-                            <div class="col-md">
-
-                                <p class="q7tpp qtpp">Q7. <span class="q7tpm">Plymouth Sutton and Devonport</span> <span
-                                        class="q7tpl">(You said <span class="q7tp"></span>)</span>
-                                </p>
-                                <p class="q8tpp qtpp">Q8. <span class="q8tpm">Birmingham Edgbaston</span> <span
-                                        class="q8tpl">(You said <span class="q8tp"></span>)</span>
-                                </p>
-                                <p class="q9tpp qtpp">Q9. <span class="q9tpm">Blyth Valley</span> <span
-                                        class="q9tpl">(You said <span class="q9tp"></span>)</span>
-                                </p>
-                                <p class="q10tpp qtpp">Q10. <span class="q10tpm">Stalybridge and Hyde</span> <span
-                                        class="q10tpl">(You said <span class="q10tp"></span>)</span>
-                                </p>
-                                <p class="q11tpp qtpp">Q11. <span class="q11tpm">Batley and Spen</span> <span
-                                        class="q11tpl">(You said <span class="q11tp"></span>)</span>
-                                </p>
-                                <p class="q12tpp qtpp">Q12. <span class="q12tpm">Redcar</span> <span class="q12tpl">(You
-                                        said <span class="q12tp"></span>)</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <h2>You got <span id="scorePrint">0</span> out of 7 correct</h2>
+                    
                     <h3>Can you share with your friends so they can take part?</h3>
                     <div class="row">
                         <div class="col-md-6">
-                            <a class="solid button facebook_share" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparty.coop%2Fconstituency-quiz%2F?utm_source=facebook&utm_medium=social&utm_campaign=cq19_fb">Share on
+                            <a class="solid button facebook_share" href="#">Share on
                                 Facebook</a>
                         </div>
                         <div class="col-md-6">
-                            <button class="solid button twitter_share">Share on Twitter</button>
+                            <button class="solid button twitter_share">Share on X/Twitter</button>
                         </div>
                     </div>
                     <div class="row">
@@ -431,22 +1048,134 @@
 
         </div>
     </div>
-    <footer>Promoted by Joe Fortune on behalf of the Co-operative Party, both at Unit 13, 83 Crampton Street, London,
-        SE17 3BQ, United Kingdom
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+// Store user answers and score
+let userAnswers = {};
+let score = 0;
 
-        Co-operative Party Limited is a registered Society under the Co-operative and Community Benefit Societies Act
-        2014. Registered no. 30027R
-    </footer>
+for (let i = 1; i <= 7; i++) {
+    $(`.q${i}`).click(function () {
+        // Store the user's answer
+        userAnswers[i] = $(this).text();
+        
+        // Disable all buttons for this question
+        $(`.q${i}`).prop('disabled', true);
+        
+        // Color the clicked button based on correctness
+        if ($(this).data("correct") === true) {
+            $(this).css('background', '#28a745'); // green
+            score++;
+        } else {
+            $(this).css('background', '#e4003b'); // red
+        }
+        
+        // Show explanation and next button
+        $(this).closest('.col-md-12').find('.explanation').addClass('show');
+        $(this).closest('.col-md-12').find('.next-button').fadeIn();
+    });
+}
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
-        integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous">
-    </script>
-    <script src="app.js"></script>
+// nextSlide function using smooth scroll
+var nextSlide = function(el) {
+    var currentSlide = $(el).closest('.slide');
+    var nextSlide = currentSlide.next('.slide');
+    
+    if (nextSlide.length) {
+        // Hide current slide and show next slide
+        currentSlide.removeClass('active');
+        nextSlide.addClass('active');
+        
+        // Update progress bar
+        updateProgressBar();
+        
+        // Smooth scroll to top of next slide
+        $('html, body').animate({
+            scrollTop: nextSlide.offset().top
+        }, 600, 'swing');
+    }
+};
+
+// Function to update progress bar
+function updateProgressBar() {
+    var currentSlideIndex = $('.slide.active').index('.slide') + 1;
+    var totalSlides = 10; // Total number of slides including signup and results
+    var progressPercentage = (currentSlideIndex / totalSlides) * 100;
+    
+    $('.quizProg').css('width', progressPercentage + '%');
+}
+
+$('.next-button').click(function () {
+    nextSlide(this);
+});
+
+// Handle signup slide button
+$('.showSignupSlide').click(function() {
+    var currentSlide = $(this).closest('.slide');
+    var nextSlide = $('.slide9');
+    
+    currentSlide.removeClass('active');
+    nextSlide.addClass('active');
+    
+    // Update progress bar
+    updateProgressBar();
+    
+    $('html, body').animate({
+        scrollTop: nextSlide.offset().top
+    }, 600, 'swing');
+});
+
+// Handle "No I don't want to help" link
+$('.answer').click(function(e) {
+    e.preventDefault();
+    
+    var currentSlide = $(this).closest('.slide');
+    var nextSlide = $('.slide10');
+    
+    currentSlide.removeClass('active');
+    nextSlide.addClass('active');
+    
+    // Update score display and progress bar
+    $('#scorePrint').text(score);
+    updateProgressBar();
+    
+    $('html, body').animate({
+        scrollTop: nextSlide.offset().top
+    }, 600, 'swing');
+});
+
+// Handle form submission (go to results)
+$('#gform_269').submit(function(e) {
+    e.preventDefault(); // Prevent actual form submission for demo
+    
+    var currentSlide = $(this).closest('.slide');
+    var nextSlide = $('.slide10');
+    
+    currentSlide.removeClass('active');
+    nextSlide.addClass('active');
+    
+    // Update score display and progress bar
+    $('#scorePrint').text(score);
+    updateProgressBar();
+    
+    $('html, body').animate({
+        scrollTop: nextSlide.offset().top
+    }, 600, 'swing');
+    
+    // Here you can add your actual form submission logic later
+    // For now, it just goes to results
+});
+
+// Initialize progress bar
+$(document).ready(function() {
+    updateProgressBar();
+});
+
+// Handle answer reveal
+$('.answerReveal').click(function() {
+    $('.answerRevealWrap').slideToggle();
+});
+</script>
 </body>
-
 </html>
